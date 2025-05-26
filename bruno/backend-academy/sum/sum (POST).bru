@@ -1,0 +1,18 @@
+meta {
+  name: sum (POST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/sum
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "a": 12,
+    "b": 18
+  }
+}

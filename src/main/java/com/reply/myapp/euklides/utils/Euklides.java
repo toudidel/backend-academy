@@ -12,4 +12,8 @@ public class Euklides {
     }
     return a;
   }
+
+  public static Integer nww(Integer a, Integer b) {
+    return (a * b) / nwd(a, b);
+  }
 }
