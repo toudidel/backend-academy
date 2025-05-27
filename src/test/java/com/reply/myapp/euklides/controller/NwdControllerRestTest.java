@@ -22,7 +22,6 @@ class NwdControllerRestTest extends BaseTest {
     Nwd response =
         given()
             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-            .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
             .body(requestBody)
             .when()
             .post("/nwd")
