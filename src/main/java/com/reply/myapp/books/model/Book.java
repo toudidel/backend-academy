@@ -1,9 +1,6 @@
 package com.reply.myapp.books.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +24,5 @@ public class Book {
 
   private BigDecimal price;
 
-  @ManyToOne
-  private Author author;
+  @ManyToOne private Author author;
 }
