@@ -9,6 +9,3 @@ app:
 logging:
   level:
     root: INFO
-    com:
-      reply:
-        myapp: DEBUG
