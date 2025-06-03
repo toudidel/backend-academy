@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: myapp
+
+app:
+  some:
+    property: Foo Bar from properties
+
+logging:
+  level:
+    root: INFO
+    com:
+      reply:
+        myapp: DEBUG
