@@ -1,0 +1,17 @@
+meta {
+  name: find all books (sorted)
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8080/books/all?size=4&page=0&sort=title
+  body: none
+  auth: none
+}
+
+params:query {
+  size: 4
+  page: 0
+  sort: title
+}
