@@ -5,11 +5,13 @@ import com.reply.myapp.books.model.BookRequest;
 import com.reply.myapp.books.repository.BookRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
 
@@ -18,6 +20,7 @@ public class BookServiceImpl implements BookService {
   @Override
   public List<Book> findAll() {
     //    return bookRepository.findAll();
+    log.info("Sum prices: {}", bookRepository.sumPrices());
     return bookRepository.findAllBooksWithAuthors();
   }
 

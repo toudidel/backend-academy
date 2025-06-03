@@ -1,6 +1,7 @@
 package com.reply.myapp.books.repository;
 
 import com.reply.myapp.books.model.Book;
+import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,4 +16,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
   @Query("SELECT b FROM Book b JOIN FETCH b.author")
   List<Book> findAllBooksWithAuthors();
+
+  @Query("SELECT SUM(b.price) FROM Book b")
+  BigDecimal sumPrices();
 }
