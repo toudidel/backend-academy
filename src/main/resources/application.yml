@@ -14,3 +14,11 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
+
+app:
+  some:
+    property: Foo Bar from properties
+
+logging:
+  level:
+    root: INFO
