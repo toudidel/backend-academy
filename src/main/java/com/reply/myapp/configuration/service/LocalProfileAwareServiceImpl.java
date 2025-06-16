@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
-@Profile("local")
+@Profile({"default", "local"})
 // @Profile("!test")
 // @Profile({"default", "local"})
 @Slf4j
