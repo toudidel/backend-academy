@@ -5,6 +5,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.reply.myapp.books.repository.AuthorRepository;
+import com.reply.myapp.books.repository.BookRepository;
 import com.reply.myapp.euklides.model.Nwd;
 import com.reply.myapp.euklides.service.EuklidesApiService;
 import org.junit.jupiter.api.Test;
@@ -17,9 +19,11 @@ import org.springframework.test.web.servlet.MockMvc;
 @WebMvcTest(NwdController.class)
 class NwdControllerMockTest {
 
-  @Autowired private MockMvc mockMvc;
-
+  @MockitoBean protected BookRepository bookRepository;
+  @MockitoBean protected AuthorRepository authorRepository;
   @MockitoBean private EuklidesApiService euklidesApiService;
+
+  @Autowired private MockMvc mockMvc;
 
   @Test
   void test_nwd() throws Exception {
