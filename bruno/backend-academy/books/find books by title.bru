@@ -6,6 +6,12 @@ meta {
 
 post {
   url: http://localhost:8080/books
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "titleStartsWith": "Harry"
+  }
 }
