@@ -16,7 +16,8 @@ public class SecurityConfig {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests(
             authz -> authz.requestMatchers("/public/**").permitAll().anyRequest().authenticated())
-        .httpBasic(Customizer.withDefaults()) // Enables Basic Auth
+        //        .httpBasic(Customizer.withDefaults()) // Enables Basic Auth
+        .oauth2Login(Customizer.withDefaults())
         .csrf(csrf -> csrf.disable()); // Disable CSRF for non-browser APIs
 
     return http.build();
