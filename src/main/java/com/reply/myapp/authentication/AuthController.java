@@ -1,5 +1,6 @@
 package com.reply.myapp.authentication;
 
+import io.swagger.v3.oas.annotations.Operation;
 import java.util.Map;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -15,6 +16,7 @@ public class AuthController {
   }
 
   @GetMapping("/auth/authenticated")
+  @Operation(description = "This method is only for authenticated users")
   public String forAuthenticatedUsers() {
     return "only authenticated users";
   }
